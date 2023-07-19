@@ -1,6 +1,6 @@
 ﻿namespace Marketplace.Models
 {
-    public class Endereco
+    public class Endereco : Entity
     {
     }
 }

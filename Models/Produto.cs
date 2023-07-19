@@ -1,6 +1,6 @@
 ﻿namespace Marketplace.Models
 {
-    public class Produto
+    public class Produto : Entity
     {
     }
 }
