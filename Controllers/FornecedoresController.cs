@@ -1,10 +1,12 @@
 ﻿using Marketplace.Data;
 using Marketplace.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Marketplace.Controllers
 {
+    [Authorize]
     public class FornecedoresController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -14,12 +16,14 @@ namespace Marketplace.Controllers
             _context = context;
         }
 
+        [AllowAnonymous]
         // GET: Fornecedores
         public async Task<IActionResult> Index()
         {
               return View(await _context.Fornecedores.ToListAsync());
         }
-
+        
+        [AllowAnonymous]
         // GET: Fornecedores/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
